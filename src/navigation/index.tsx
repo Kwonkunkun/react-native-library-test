@@ -96,7 +96,11 @@ const Navigation = () => {
         })}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Search" component={SearchScreen} />
+        <Tab.Screen
+          name="Search"
+          component={SearchScreen}
+          options={{ headerShown: false }}
+        />
         <Tab.Screen name="Notification" component={NotificationScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>

@@ -1,4 +1,4 @@
-import { Platform, StatusBar } from "react-native";
+import { Platform, StatusBar, StatusBarStyle } from "react-native";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 
 const useStatusBar = () => {
@@ -7,7 +7,11 @@ const useStatusBar = () => {
       ? getStatusBarHeight()
       : StatusBar.currentHeight ?? 24;
 
-  return { height };
+  const setStatusBarStyle = (style: StatusBarStyle) => {
+    StatusBar.setBarStyle(style);
+  };
+
+  return { height, setStatusBarStyle };
 };
 
 export default useStatusBar;
